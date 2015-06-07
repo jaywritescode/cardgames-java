@@ -6,7 +6,7 @@ package info.jayharris.cardgames;
 public enum Suit {
     CLUBS(Color.BLACK), DIAMONDS(Color.RED), SPADES(Color.BLACK), HEARTS(Color.RED);
 
-    enum Color {
+    public enum Color {
         RED, BLACK;
 
         public Color opposite() {
