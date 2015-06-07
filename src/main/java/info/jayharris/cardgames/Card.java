@@ -36,6 +36,8 @@ public class Card {
         return suit;
     }
 
+    public Suit.Color getColor() { return suit.color; }
+
     public boolean isFacedown() {
         return isFacedown;
     }
