@@ -1,8 +1,5 @@
 package info.jayharris.cardgames;
 
-/**
- * Created by jayharris on 5/27/15.
- */
 public enum Rank {
     ACE(14, "A"),
     TWO(2),
@@ -33,5 +30,44 @@ public enum Rank {
     @Override
     public String toString() {
         return str;
+    }
+
+    public enum SortType { ACE_LOW, ACE_HIGH }
+
+    public Rank lower() {
+        return lower(null);
+    }
+
+    public Rank lower(SortType sortType) {
+        switch (this) {
+            case ACE:
+                return sortType != SortType.ACE_LOW ? KING : null;
+            case KING:
+                return QUEEN;
+            case QUEEN:
+                return JACK;
+            case JACK:
+                return TEN;
+            case TEN:
+                return NINE;
+            case NINE:
+                return EIGHT;
+            case EIGHT:
+                return SEVEN;
+            case SEVEN:
+                return SIX;
+            case SIX:
+                return FIVE;
+            case FIVE:
+                return FOUR;
+            case FOUR:
+                return THREE;
+            case THREE:
+                return TWO;
+            case TWO:
+                return sortType != SortType.ACE_HIGH ? ACE : null;
+            default:
+                return null;
+        }
     }
 }
