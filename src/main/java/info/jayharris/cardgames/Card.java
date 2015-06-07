@@ -89,8 +89,9 @@ public class Card {
      * @param string the input string
      * @return the appropriate card, face-up
      */
-    public static Card stringToCard(String string) {
-        char[] c = string.toUpperCase().toCharArray();
+    public static Card fromString(String string) {
+        checkArgument(string.length() == 2, "Cannot interpret input string.");
+        String[] c = new String[] { String.valueOf(string.charAt(0)), String.valueOf(string.charAt(1)) };
         checkArgument(stringRankMap.containsKey(c[0]) && stringSuitMap.containsKey(c[1]),
                 "Cannot interpret input string.");
         return new Card(stringRankMap.get(c[0]), stringSuitMap.get(c[1]));
