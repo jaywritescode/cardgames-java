@@ -98,4 +98,15 @@ public class Card {
                 "Cannot interpret input string.");
         return new Card(stringRankMap.get(c[0]), stringSuitMap.get(c[1]));
     }
+
+    /**
+     * Create a card with a randomly chosen rank and suit.
+     *
+     * @return a random card
+     */
+    public static Card randomCard() {
+        Rank rank = EnumSet.allOf(Rank.class).toArray(new Rank[] {})[(int) (Math.random() * 13)];
+        Suit suit = EnumSet.allOf(Suit.class).toArray(new Suit[] {})[(int) (Math.random() * 4)];
+        return new Card(rank, suit);
+    }
 }
