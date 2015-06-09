@@ -70,4 +70,41 @@ public enum Rank {
                 return null;
         }
     }
+
+    public Rank higher() {
+        return higher(null);
+    }
+
+    public Rank higher(Rank.SortType sortType) {
+        switch (this) {
+            case ACE:
+                return sortType != SortType.ACE_HIGH ? TWO : null;
+            case KING:
+                return sortType != SortType.ACE_LOW ? ACE : null;
+            case QUEEN:
+                return KING;
+            case JACK:
+                return QUEEN;
+            case TEN:
+                return JACK;
+            case NINE:
+                return TEN;
+            case EIGHT:
+                return NINE;
+            case SEVEN:
+                return EIGHT;
+            case SIX:
+                return SEVEN;
+            case FIVE:
+                return SIX;
+            case FOUR:
+                return FIVE;
+            case THREE:
+                return FOUR;
+            case TWO:
+                return THREE;
+            default:
+                return null;
+        }
+    }
 }
