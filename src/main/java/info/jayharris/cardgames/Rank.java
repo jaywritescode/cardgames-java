@@ -15,8 +15,8 @@ public enum Rank {
     QUEEN(12, "Q"),
     KING(13, "K");
 
-    protected final int value;
-    protected final String str;
+    public final int value;
+    public final String str;
 
     Rank(int value) {
         this(value, String.valueOf(value));
