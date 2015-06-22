@@ -4,9 +4,6 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by jayharris on 5/28/15.
- */
 public class Deck extends LinkedList<Card> {
 
     public Deck(List<Card> cards) {
@@ -14,18 +11,18 @@ public class Deck extends LinkedList<Card> {
     }
 
     /**
-     * Deal the top card in the deck, removing it from the deck.
+     * Deal the first card {@code cards[0]} in the deck, removing it from the deck.
      *
-     * @return the top card in the deck, or {@code null} if the deck is empty
+     * @return the first card in the deck, or {@code null} if the deck is empty
      */
     public Card deal() {
         return pollFirst();
     }
 
     /**
-     * Deal the top card in the deck face-down.
+     * Deal the first card in the deck face-down.
      *
-     * @return the top card in the deck, or {@code null} if the deck is empty
+     * @return the first card in the deck, or {@code null} if the deck is empty
      */
     public Card dealFaceDown() {
         Card card;
@@ -36,9 +33,9 @@ public class Deck extends LinkedList<Card> {
     }
 
     /**
-     * Deal the top card in the deck face-up.
+     * Deal the first card in the deck face-up.
      *
-     * @return the top card in the deck, or {@code null} if the deck is empty
+     * @return the first card in the deck, or {@code null} if the deck is empty
      */
     public Card dealFaceUp() {
         Card card;
