@@ -11,7 +11,7 @@ public class Deck extends LinkedList<Card> {
     }
 
     /**
-     * Deal the first card {@code cards[0]} in the deck, removing it from the deck.
+     * Deals the top (zero-th) card from the deck.
      *
      * @return the first card in the deck, or {@code null} if the deck is empty
      */
@@ -20,7 +20,7 @@ public class Deck extends LinkedList<Card> {
     }
 
     /**
-     * Deal the first card in the deck face-down.
+     * Deals the top (zero-th) card from the deck, face-down.
      *
      * @return the first card in the deck, or {@code null} if the deck is empty
      */
@@ -33,7 +33,7 @@ public class Deck extends LinkedList<Card> {
     }
 
     /**
-     * Deal the first card in the deck face-up.
+     * Deals the top (zero-th) card from the deck, face-up.
      *
      * @return the first card in the deck, or {@code null} if the deck is empty
      */
@@ -46,7 +46,7 @@ public class Deck extends LinkedList<Card> {
     }
 
     /**
-     * Shuffle the deck.
+     * Shuffles the deck.
      */
     public void shuffle() {
         Collections.shuffle(this);

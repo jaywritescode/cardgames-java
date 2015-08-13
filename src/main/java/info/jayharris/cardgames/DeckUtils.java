@@ -9,9 +9,9 @@ import java.util.LinkedList;
 public class DeckUtils {
 
     /**
-     * Create a standard 52-card deck.
+     * Creates a standard 52-card deck.
      *
-     * @return a standard deck of cards
+     * @return a standard Deck of cards
      */
     public static Deck createStandardDeck() {
         return new Deck(new LinkedList<Card>() {{

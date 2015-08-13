@@ -71,10 +71,18 @@ public enum Rank {
         }
     }
 
+    /**
+     * @return the rank immediately above this, assuming aces are both high and
+     * low
+     */
     public Rank higher() {
         return higher(null);
     }
 
+    /**
+     * @param sortType whether aces are high or low, or {@code null} for both
+     * @return the rank immediately above this
+     */
     public Rank higher(Rank.SortType sortType) {
         switch (this) {
             case ACE:
