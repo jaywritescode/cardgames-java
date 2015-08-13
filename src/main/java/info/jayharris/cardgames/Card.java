@@ -18,38 +18,88 @@ public class Card {
     private final Suit suit;
     private boolean isFacedown;
 
+    /**
+     * Constructs a face-up card with the given rank and suit.
+     *
+     * @param rank the rank
+     * @param suit the suit
+     */
     public Card(Rank rank, Suit suit) {
         this(rank, suit, false);
     }
 
+    /**
+     * Constructs a card with the given rank, suit, and face-up-ed-ness.
+     *
+     * @param rank the rank
+     * @param suit the suit
+     * @param isFacedown {@code true} if the card is face-down
+     */
     public Card(Rank rank, Suit suit, boolean isFacedown) {
         this.rank = rank;
         this.suit = suit;
         this.isFacedown = isFacedown;
     }
 
+    /**
+     * Gets this card's rank.
+     *
+     * @return this card's rank
+     */
     public Rank getRank() {
         return rank;
     }
 
+    /**
+     * Gets this card's suit.
+     *
+     * @return this card's suit
+     */
     public Suit getSuit() {
         return suit;
     }
 
+    /**
+     * Gets this card's color (red or black).
+     *
+     * @return this card's color
+     */
     public Suit.Color getColor() { return suit.color; }
 
+    /**
+     * Gets whether this card is face-down.
+     *
+     * @return {@code true} iff the card is face-down
+     */
     public boolean isFacedown() {
         return isFacedown;
     }
 
+    /**
+     * Gets this card's rank, if this card is face-up (and therefore its rank
+     * is known).
+     *
+     * @return this card's rank, or an absent {@code Optional} if this card is
+     * face-down
+     */
     public Optional<Rank> getRankIfVisible() {
         return Optional.fromNullable(isFacedown ? null : getRank());
     }
 
+    /**
+     * Gets this card's suit, if this card is face-up (and therefore its suit
+     * is known).
+     *
+     * @return this card's suit, or an absent {@code Optional} if this card is
+     * face-down
+     */
     public Optional<Suit> getSuitIfVisible() {
         return Optional.fromNullable(isFacedown ? null : getSuit());
     }
 
+    /**
+     * Flips the card, making a face-down card face-up, and vice versa.
+     */
     public void flip() {
         isFacedown = !isFacedown;
     }
@@ -86,7 +136,7 @@ public class Card {
     }};
 
     /**
-     * Create a card from a string, such as "2H" or "JS".
+     * Creates a card from a string, such as "2H" or "JS".
      *
      * @param string the input string
      * @return the appropriate card, face-up
@@ -100,7 +150,7 @@ public class Card {
     }
 
     /**
-     * Create a card with a randomly chosen rank and suit.
+     * Creates a card with a randomly chosen rank and suit.
      *
      * @return a random card
      */
